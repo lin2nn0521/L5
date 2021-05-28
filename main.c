@@ -1,23 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int common_factor (int first, int second)
+struct student
 {
-    int r;
-    r = first % second;
-    if(r==0)
-            return second;
-    return common_factor(second,r);
-}
+    char *student_name;
+    char *student_ID;
+    char *student_age;
+} ;
 int main()
 {
-    int a,b;
-    printf("請輸入第一個數: \n");
-    scanf("%d",&a);
-    printf("請輸入第二個數: \n");
-    scanf("%d",&b);
-    printf("最大公因數為: %d\n",common_factor(a,b));
-    system("PAUSE");
+    printf("姓名\t學號\t年齡\n");
+    struct student one={"張三","08101","17"};
+    struct student two={"阿美" ,"08301","17"};
+    struct student three={"李四","08103","16"};
+    struct student four={"小美","08201","16"};
+    printf("%s\t%s\t%s\n",one.student_name,one.student_ID,one.student_age);
+    printf("%s\t%s\t%s\n",two.student_name,two.student_ID,two.student_age);
+    printf("%s\t%s\t%s\n",three.student_name,three.student_ID,three.student_age);
+    printf("%s\t%s\t%s\n",four.student_name,four.student_ID,four.student_age);
     return 0;
 }
-
